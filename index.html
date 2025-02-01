@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Coffee`s Garden</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Fondo pastel suave con un toque de textura */
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #f8c8d4, #e9c1d9); /* Fondo degradado pastel */
+      font-family: 'Dancing Script', cursive;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    /* Estilo para el encabezado */
+    header {
+      background: #ffb6c1;
+      padding: 40px 0;
+      text-align: center;
+      border-radius: 25px;
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+      margin-bottom: 60px;
+    }
+
+    header h1 {
+      font-size: 48px;
+      color: #ffffff;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    header p {
+      font-size: 20px;
+      color: #fff;
+      font-weight: 300;
+    }
+
+    /* Estilo de la navegación */
+    nav {
+      margin: 20px 0;
+    }
+
+    nav ul {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+    }
+
+    nav li {
+      margin: 0 20px;
+    }
+
+    nav a {
+      text-decoration: none;
+      font-size: 18px;
+      color: #ff6f61;
+      font-weight: 500;
+      position: relative;
+      padding: 5px;
+      transition: all 0.3s ease;
+    }
+
+    nav a::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: #ffb6c1;
+      transform: scaleX(0);
+      transform-origin: bottom right;
+      transition: transform 0.25s ease-out;
+    }
+
+    nav a:hover::after {
+      transform: scaleX(1);
+      transform-origin: bottom left;
+    }
+
+    /* Sección principal (Bienvenida) */
+    .section {
+      text-align: center;
+      padding: 50px;
+      margin-top: 20px;
+    }
+
+    .hero h2 {
+      font-size: 36px;
+      color: #ff6f61;
+      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .hero p {
+      font-size: 20px;
+      color: #fff;
+      font-weight: 300;
+    }
+
+    /* Imágenes de flores con animación */
+    .flower {
+      position: absolute;
+      animation: float 6s ease-in-out infinite;
+    }
+
+    .flower-1 {
+      top: 10%;
+      left: 20%;
+    }
+
+    .flower-2 {
+      top: 50%;
+      left: 30%;
+    }
+
+    .flower-3 {
+      top: 70%;
+      left: 60%;
+    }
+
+    .flower-4 {
+      top: 30%;
+      left: 40%;
+    }
+
+    .flower-5 {
+      top: 80%;
+      left: 15%;
+    }
+
+    .flower-6 {
+      top: 45%;
+      left: 75%;
+    }
+
+    .flower-7 {
+      top: 60%;
+      left: 10%;
+    }
+
+    .flower-8 {
+      top: 20%;
+      left: 80%;
+    }
+
+    .flower-9 {
+      top: 25%;
+      left: 55%;
+    }
+
+    .flower-10 {
+      top: 90%;
+      left: 50%;
+    }
+
+    /* Animación de las flores */
+    @keyframes float {
+      0% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-15px);
+      }
+      100% {
+        transform: translateY(0);
+      }
+    }
+
+    /* Botón de llamada a la acción (e.g., "Volver al Inicio") */
+    .back-button {
+      margin-top: 30px;
+      padding: 12px 25px;
+      font-size: 18px;
+      background-color: #f1c6d9;
+      color: #ff6f61;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+    }
+
+    .back-button:hover {
+      background-color: #ffb6c1;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER: Encabezado con saludo -->
+  <header>
+    <div class="header-content">
+      <h1>Coffee`s Garden</h1>
+      <p>Un espacio con esencia y recuerdos</p>
+    </div>
+  </header>
+
+  <!-- NAVEGACIÓN -->
+  <nav>
+    <ul>
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="informacion.html">Información</a></li>
+      <li><a href="recuerdos.html">Recuerdos</a></li>
+      <li><a href="sorpresa.html">¿?</a></li>
+    </ul>
+  </nav>
+
+  <!-- CONTENIDO PRINCIPAL -->
+  <main class="section">
+    <div class="hero">
+      <h2>Bienvenida a este rincón especial</h2>
+      <p>Disfruta de cada detalle, cada flor y cada recuerdo. ¡Este es tu espacio!</p>
+    </div>
+
+    <!-- ELEMENTOS: Flores decorativas -->
+    <img class="flower flower-1" src="assets/flower1.png" alt="Flor Aesthetic">
+    <img class="flower flower-2" src="assets/flower2.png" alt="Flor Aesthetic">
+    <img class="flower flower-3" src="assets/flower3.png" alt="Flor Aesthetic">
+    <img class="flower flower-4" src="assets/flower1.png" alt="Flor Aesthetic">
+    <img class="flower flower-5" src="assets/flower2.png" alt="Flor Aesthetic">
+    <img class="flower flower-6" src="assets/flower3.png" alt="Flor Aesthetic">
+    <img class="flower flower-7" src="assets/flower1.png" alt="Flor Aesthetic">
+    <img class="flower flower-8" src="assets/flower2.png" alt="Flor Aesthetic">
+    <img class="flower flower-9" src="assets/flower3.png" alt="Flor Aesthetic">
+    <img class="flower flower-10" src="assets/flower1.png" alt="Flor Aesthetic">
+  </main>
+
+</body>
+</html>
+

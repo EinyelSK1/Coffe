@@ -1,0 +1,307 @@
+/* ===================================================== */
+/*                   RESET Y GLOBALES                  */
+/* ===================================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #fafafa;
+  color: #333;
+  overflow-x: hidden;
+}
+
+/* ===================================================== */
+/*                ESTILOS DEL HEADER                   */
+/* ===================================================== */
+.header-bg {
+  width: 100%;
+  height: 400px; /* Ajusta la altura según lo necesites */
+  background: url('assets/tu-imagen-de-fondo.jpg') center center/cover no-repeat;
+  position: relative;
+}
+
+.header-bg::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(245, 222, 179, 0.4); /* Color pastel difuminado */
+  mix-blend-mode: overlay;
+}
+
+.header-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding-top: 120px; /* Ajustado el margen superior */
+  color: #fff;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
+}
+
+.header-content h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.header-content p {
+  font-size: 1.5rem;
+}
+
+/* ===================================================== */
+/*                    NAVEGACIÓN                     */
+/* ===================================================== */
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(255,255,255,0.9);
+  backdrop-filter: blur(8px);
+  padding: 15px 30px;
+  z-index: 1000;
+  border-bottom: 1px solid #eee;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 600;
+  transition: color 0.4s ease;
+}
+
+nav ul li a:hover {
+  color: #e91e63;
+}
+
+/* ===================================================== */
+/*                ESTILOS DE LAS SECCIONES             */
+/* ===================================================== */
+.section {
+  padding: 120px 20px 80px;
+  min-height: 100vh;
+}
+
+/* ===================================================== */
+/*                     HERO SECTION                    */
+/* ===================================================== */
+.hero {
+  text-align: center;
+  padding: 50px;
+}
+
+/* ===================================================== */
+/*                  ESTILOS DE LA GALERÍA              */
+/* ===================================================== */
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+
+.card {
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  width: 280px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  transition: transform 0.5s ease;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card img {
+  width: 100%;
+  display: block;
+}
+
+.card p {
+  padding: 15px;
+  text-align: center;
+}
+
+/* ===================================================== */
+/*                  ESTILOS DEL CANVAS                 */
+/* ===================================================== */
+#easterCanvas {
+  display: block;
+  margin: 0 auto;
+  background: #fff;
+  border: 2px solid #e91e63;
+}
+
+/* ===================================================== */
+/*           ESTILOS PARA LAS FLORES DISPERSAS         */
+/* ===================================================== */
+.flower {
+  position: fixed;
+  z-index: 50;
+  opacity: 0.8;
+}
+
+/* Ejemplo de posición y tamaño para cada flor */
+.flower-1 {
+  top: 20%;
+  left: 5%;
+  width: 80px;
+}
+
+.flower-2 {
+  top: 60%;
+  right: 10%;
+  width: 120px;
+}
+
+.flower-3 {
+  bottom: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+}
+
+/* --- Estilos comunes ya existentes --- */
+/* ... (Código de header, nav, sección, etc.) ... */
+
+/* Estilos para el separador entre secciones */
+.divider {
+  margin: 40px 0;
+  border: 0;
+  border-top: 1px solid #ddd;
+}
+
+/* Estilos para el formulario de nuevos recuerdos */
+.post-form {
+  background: rgba(255, 255, 255, 0.8);
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 600px;
+  margin: 0 auto 40px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.post-form h2 {
+  text-align: center;
+  color: #e91e63;
+  margin-bottom: 20px;
+}
+
+.post-form .form-group {
+  margin-bottom: 15px;
+}
+
+.post-form label {
+  display: block;
+  margin-bottom: 5px;
+  color: #555;
+}
+
+.post-form input[type="text"],
+.post-form input[type="date"],
+.post-form textarea,
+.post-form input[type="file"] {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+  background: #fff;
+}
+
+.post-form button {
+  display: block;
+  margin: 20px auto 0;
+  padding: 10px 20px;
+  background: #e91e63;
+  border: none;
+  color: #fff;
+  font-size: 1.1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.post-form button:hover {
+  background: #d81b60;
+}
+
+/* Estilos para la lista de recuerdos */
+.post-list {
+  max-width: 800px;
+  margin: 0 auto 80px;
+  background: rgba(255, 255, 255, 0.85);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.post-list h2 {
+  text-align: center;
+  color: #e91e63;
+  margin-bottom: 20px;
+}
+
+/* Cada post en la lista se mostrará como un acordeón */
+.post-item {
+  border-bottom: 1px solid #ddd;
+  padding: 10px 0;
+}
+
+.post-item:last-child {
+  border-bottom: none;
+}
+
+/* Título del post (botón para desplegar) */
+.post-title {
+  font-size: 1.2rem;
+  color: #333;
+  background: none;
+  border: none;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 4px;
+  transition: background 0.3s ease;
+}
+
+.post-title:hover {
+  background: rgba(233, 30, 99, 0.1);
+}
+
+/* Contenido oculto del post (imagen y descripción) */
+.post-content {
+  display: none;
+  padding: 10px;
+  animation: fadeIn 0.5s ease forwards;
+}
+
+.post-content img {
+  max-width: 100%;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+.post-content p {
+  font-size: 1rem;
+  color: #555;
+}
+
+/* Animación para desplegar el contenido */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}

@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recuerditos</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #f8c8d4, #e9c1d9);
+            font-family: 'Dancing Script', cursive;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            height: 100vh;
+        }
+
+        /* Barra de navegación */
+        nav {
+            width: 100%;
+            background: #f6a8b6;
+            padding: 10px 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 10;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav li {
+            margin: 0 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            font-size: 18px;
+            color: #fff;
+            font-weight: 500;
+            padding: 5px;
+            transition: all 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #ffb6c1;
+            border-bottom: 2px solid #fff;
+        }
+
+        /* Encabezado */
+        header {
+            background: #f8c8d4;
+            padding: 100px 0 40px 0; /* Añadido espacio para la barra de navegación */
+            text-align: center;
+            border-radius: 25px;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+            width: 100%;
+        }
+
+        header h1 {
+            font-size: 48px;
+            color: #ffffff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        header p {
+            font-size: 20px;
+            color: #fff;
+            font-weight: 300;
+        }
+
+        .section {
+            text-align: center;
+            padding: 50px;
+            margin-top: 80px; /* Ajuste para no solaparse con la barra de navegación */
+        }
+
+        .hero h2 {
+            font-size: 36px;
+            color: #f6a8b6;
+        }
+
+        .hero p {
+            font-size: 20px;
+            color: #fff;
+            font-weight: 300;
+        }
+
+        .post-form {
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            margin-top: 30px;
+        }
+
+        .post-form input, .post-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .post-form input[type="file"] {
+            padding: 0;
+        }
+
+        .post-button {
+            background-color: #f6a8b6;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .post-button:hover {
+            background-color: #ffb6c1;
+        }
+
+        .posts {
+            margin-top: 30px;
+            width: 80%;
+        }
+
+        .post {
+            background-color: #fff;
+            padding: 20px;
+            margin-bottom: 15px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .post h3 {
+            font-size: 24px;
+            color: #f6a8b6;
+        }
+
+        .post p {
+            font-size: 16px;
+            color: #333;
+        }
+
+        .post img {
+            max-width: 100%;
+            border-radius: 10px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="informacion.html">Información</a></li>
+            <li><a href="recuerdos.html">Recuerdos</a></li>
+            <li><a href="sorpresa.html">¿?</a></li>
+        </ul>
+    </nav>
+
+    <header>
+        <h1>Recuerditos</h1>
+        <p>Un lugar especial para guardar momentos inolvidables</p>
+    </header>
+
+    <main class="section">
+        <div class="hero">
+            <h2>¡Bienvenido a tus recuerdos!</h2>
+            <p>Aquí podrás guardar tus momentos más especiales con un toque único. ¡Vamos a empezar a crear recuerdos juntos!</p>
+        </div>
+
+        <!-- Formulario para publicar recuerdos -->
+        <div class="post-form">
+            <h3>Agregar un nuevo recuerdo</h3>
+            <form id="postForm">
+                <input type="text" id="postTitle" placeholder="Título" required>
+                <input type="date" id="postDate" required>
+                <input type="file" id="postImage" accept="image/*" required>
+                <textarea id="postDescription" placeholder="Descripción" rows="4" required></textarea>
+                <button type="button" class="post-button" onclick="addPost()">¡Guardar!</button>
+            </form>
+        </div>
+
+        <!-- Sección de posts guardados -->
+        <div class="posts" id="postsList"></div>
+
+    </main>
+
+    <script>
+        const postsList = document.getElementById('postsList');
+
+        function addPost() {
+            const title = document.getElementById('postTitle').value;
+            const date = document.getElementById('postDate').value;
+            const image = document.getElementById('postImage').files[0];
+            const description = document.getElementById('postDescription').value;
+
+            if (title && date && image && description) {
+                const reader = new FileReader();
+                reader.onload = function(event) {
+                    const post = document.createElement('div');
+                    post.classList.add('post');
+                    post.innerHTML = `
+                        <h3>${title} - ${date}</h3>
+                        <p>${description}</p>
+                        <img src="${event.target.result}" alt="Imagen de ${title}">
+                    `;
+                    postsList.prepend(post);
+                };
+                reader.readAsDataURL(image);
+
+                // Resetear el formulario
+                document.getElementById('postForm').reset();
+            } else {
+                alert('Por favor, completa todos los campos.');
+            }
+        }
+    </script>
+
+</body>
+</html>

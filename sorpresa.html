@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sorpresa - Regalo para Ester</title>
+  <style>
+    /* Fondo rosa difuminado */
+    body {
+      margin: 0;
+      padding: 0;
+      background: #ffb6c1; /* Rosa pastel */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      font-family: Arial, sans-serif;
+      flex-direction: column;
+    }
+
+    /* Estilo para los signos de pregunta */
+    .question {
+      font-size: 120px;
+      font-weight: bold;
+      color: #f1c6d9; /* Color pastel */
+      text-align: center;
+      transform: translateY(-50%);
+    }
+
+    .question span {
+      color: #ffffff;
+    }
+
+    /* Estilo del botón de regreso */
+    .back-button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 18px;
+      color: #ffb6c1;
+      background-color: #f1c6d9; /* Color pastel */
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .back-button:hover {
+      background-color: #f0a1bb; /* Color pastel más oscuro para hover */
+    }
+  </style>
+</head>
+<body>
+  <!-- Contenido principal con los signos de pregunta -->
+  <div class="question">
+    <span>¿</span><span>?</span>
+  </div>
+
+  <!-- Botón para volver al inicio -->
+  <button class="back-button" onclick="window.location.href='index.html'">Volver al Inicio</button>
+
+</body>
+</html>

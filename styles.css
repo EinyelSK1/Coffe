@@ -1,0 +1,89 @@
+/* General */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: #fffafc; /* Suave y pastel */
+  color: #333;
+  text-align: center;
+}
+
+/* Header */
+.header-bg {
+  width: 100%;
+  padding: 40px 20px;
+  background-color: #fce4ec; /* Pastel rosado */
+  border-bottom: 2px solid #f8bbd0;
+}
+
+.header-content h1 {
+  font-size: 2.5em;
+  margin-bottom: 10px;
+}
+
+.header-content p {
+  font-size: 1.2em;
+  font-weight: 300;
+}
+
+/* Navegación */
+nav {
+  background: #f8bbd0;
+  padding: 15px 0;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+}
+
+nav ul li {
+  margin: 0 15px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  font-size: 1.2em;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 10px;
+  transition: background 0.3s ease-in-out;
+}
+
+nav ul li a:hover {
+  background: #f48fb1;
+}
+
+/* Sección principal */
+.section {
+  padding: 50px 20px;
+}
+
+.hero h2 {
+  font-size: 2em;
+  color: #d81b60;
+}
+
+.hero p {
+  font-size: 1.2em;
+  color: #333;
+}
+
+/* Flores decorativas */
+.flower {
+  position: absolute;
+  width: 80px;
+  opacity: 0.7;
+  transition: transform 0.5s ease-in-out;
+}
+
+.flower:hover {
+  transform: scale(1.1);
+}
+
+.flower-1 { top: 10%; left: 5%; }
+.flower-2 { top: 50%; right: 10%; }
+.flower-3 { bottom: 10%; left: 50%; }
